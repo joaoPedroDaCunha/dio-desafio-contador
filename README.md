@@ -2,7 +2,7 @@
 
 Esse é o codigo do desafio da DIO em que utilizamos para treinar o controle de fluxo 
 
-## Folder Structure
+## Estrutura das pastas
 
 O espaço de trabalho contém duas pastas por padrão, onde:
 
