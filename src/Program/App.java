@@ -13,15 +13,21 @@ public class App {
        Scanner sc =new Scanner (System.in);
        int parameterTwo;
        int parameterOne;
+       int attempts = 0;
 
        try{
             do {
+                if(attempts != 0){
+                    System.out.println("Tente Novamente");
+                }
                 System.out.println("Digite o Primeiro numero : ");
                 parameterOne = sc.nextInt();
                 System.out.println("Digite o Segundo numero :");
                 parameterTwo = sc.nextInt();
                 if(parameterOne < parameterTwo){
-                    System.out.println("Erro: o primeiro numero deve ser maior que o segundo");
+                    attempts ++;
+                    System.out.println("Erro: o primeiro numero deve ser maior que o segundo \n Entedeu ?");
+                    sc.nextLine();
                     Clear.terminalClear();
                 }
             } while (parameterOne < parameterTwo);
