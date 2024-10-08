@@ -1,24 +1,33 @@
 package Program;
 
+import java.io.IOException;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
+import Entity.Clear;
+import Entity.Count;
 import Excptions.InvalidParametersException;
 
 public class App {
-    public static void main(String[] args) throws InvalidParametersException {
+    public static void main(String[] args) throws InvalidParametersException, InterruptedException, IOException {
        Scanner sc =new Scanner (System.in);
+       int parameterTwo;
+       int parameterOne;
 
        try{
             do {
                 System.out.println("Digite o Primeiro numero : ");
-                int parameterOne = sc.nextInt();
+                parameterOne = sc.nextInt();
                 System.out.println("Digite o Segundo numero :");
-                int parameterTwo = sc.nextInt();
-                
-            } while (condition);        
+                parameterTwo = sc.nextInt();
+                if(parameterOne < parameterTwo){
+                    System.out.println("Erro: o primeiro numero deve ser maior que o segundo");
+                    Clear.terminalClear();
+                }
+            } while (parameterOne < parameterTwo);
+            Count.count(parameterOne, parameterTwo);       
        }catch(InputMismatchException e){
-        System.out.println("Deve informar apenas numeros");
+        System.out.println("Erro:Deve informar apenas numeros");
        }
 
        sc.close();
